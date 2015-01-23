@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title></title>
+    <style>
+    .header{
+    	font-size: 75px;
+    	text-align: left;
+    	font-family: 'Helvetica', sans-serif;
+    	float: left;
+    	margin-top: 155px;
+    }
+    /*future score board*/
+   /* .score1{
+    	font-size: 15px;
+    	font-family: 'Helvetica', sans-serif;
+    	float: right;
+    }*/
+    /*future score board*/
+    /*.score2{
+    	font-size: 15px;
+    	font-family: 'Helvetica', sans-serif;
+    	float: right;
+    }*/
+ 	#board {
+ 		width: 600px;
+ 		margin: auto;
+ 		padding: none;
+ 	}
+ 	.rightRows {
+    	border-left: 5px solid black;
+ 	 	border-top: 5px solid black;
+ 	 }
+ 	 .topRow {
+ 	 	border-left: 5px solid black;
+ 	 }
+ 	.leftRow {
+ 		border-top: 5px solid black;
+ 	}
+ 	div > div {
+ 		display: inline-block;
+ 		width: 190px;
+ 		height: 190px;
+ 		border-width: 190px;
+ 		padding: none;
+ 	}
+    </style>
+</head>
+<body>
+<h1 class="header">Tic <br> Tac <br> Toe</h1>
+<!-- Future score board -->
+<!-- <h2 class="score1">Player 1</h2><br>
+<h3 class="score2">Player 2</h3> -->
+
+	<div id="board">
+		<div></div>
+		<div id="squares" class="topRow"></div>
+		<div id="squares" class="topRow"></div>
+		<div id="squares" class="leftRow"></div>
+		<div id="squares" class="rightRows"></div>
+		<div id="squares" class="rightRows"></div>
+		<div id="squares" class="leftRow"></div>
+		<div id="squares" class="rightRows"></div>
+		<div id="squares" class="rightRows"></div>
+	
+
+	<script>
+	var squares = document.getElementsById("squares");
+
+	// squares.onclick = function changeImage(){
+	// 	console.log("hi");
+	// };
+
+		
+
+	</script>
+
+
+</body>
+</html>
