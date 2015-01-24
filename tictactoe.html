@@ -9,68 +9,290 @@
     	float: left;
     	margin-top: 155px;
     }
-    /*future score board*/
-   /* .score1{
-    	font-size: 15px;
-    	font-family: 'Helvetica', sans-serif;
-    	float: right;
-    }*/
-    /*future score board*/
-    /*.score2{
-    	font-size: 15px;
-    	font-family: 'Helvetica', sans-serif;
-    	float: right;
-    }*/
+
  	#board {
  		width: 600px;
  		margin: auto;
  		padding: none;
+ 		position: relative;
  	}
- 	.rightRows {
+
+ 	#square4, #square5, #square7, #square8 {
     	border-left: 5px solid black;
  	 	border-top: 5px solid black;
  	 }
- 	 .topRow {
+
+ 	 #square1, #square2 {
  	 	border-left: 5px solid black;
  	 }
- 	.leftRow {
+
+ 	#square3, #square6 {
  		border-top: 5px solid black;
  	}
+
  	div > div {
  		display: inline-block;
  		width: 190px;
  		height: 190px;
  		border-width: 190px;
  		padding: none;
+ 		float: left;
  	}
+
     </style>
 </head>
 <body>
-<h1 class="header">Tic <br> Tac <br> Toe</h1>
-<!-- Future score board -->
-<!-- <h2 class="score1">Player 1</h2><br>
-<h3 class="score2">Player 2</h3> -->
+<h1 class="header">T <br> T <br> T</h1>
 
 	<div id="board">
-		<div></div>
-		<div id="squares" class="topRow"></div>
-		<div id="squares" class="topRow"></div>
-		<div id="squares" class="leftRow"></div>
-		<div id="squares" class="rightRows"></div>
-		<div id="squares" class="rightRows"></div>
-		<div id="squares" class="leftRow"></div>
-		<div id="squares" class="rightRows"></div>
-		<div id="squares" class="rightRows"></div>
+	<!-- squares for the board -->
+		<div id="square0" class="square"></div>
+		<div id="square1" class="square"></div>
+		<div id="square2" class="square"></div>
+		<div id="square3" class="square"></div>
+		<div id="square4" class="square"></div>
+		<div id="square5" class="square"></div>
+		<div id="square6" class="square"></div>
+		<div id="square7" class="square"></div>
+		<div id="square8" class="square"></div>
 	
 
 	<script>
-	var squares = document.getElementsById("squares");
 
-	// squares.onclick = function changeImage(){
-	// 	console.log("hi");
-	// };
+		var box0 = [];
+		var box1 = [];
+		var box2 = [];
+		var box3 = [];
+		var box4 = [];
+		var box5 = [];
+		var box6 = [];
+		var box7 = [];
+		var box8 = [];
 
-		
+	// changes the turn from player1 to player2
+	var player1 = 1;
+
+// changes square0 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square0 = document.getElementById("square0");
+	square0.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box0.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box0.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		// box0.onclick = null;
+	};
+
+// changes square1 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square1 = document.getElementById("square1");
+	square1.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box1.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box1.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box1.onclick = null;
+	};
+
+// changes square2 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square2 = document.getElementById("square2");
+	square2.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box2.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box2.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box2.onclick = null;
+	};		
+
+// changes square3 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square3 = document.getElementById("square3");
+	square3.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box3.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box3.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box3.onclick = null;
+	};
+
+// changes square4 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square4 = document.getElementById("square4");
+	square4.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box4.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box4.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box4.onclick = null;
+	};
+
+// changes square5 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square5 = document.getElementById("square5");
+	square5.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box5.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box5.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box5.onclick = null;
+	};
+
+// changes square6 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square6 = document.getElementById("square6");
+	square6.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box6.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box6.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box6.onclick = null;
+	};
+
+// changes square7 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square7 = document.getElementById("square7");
+	square7.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box7.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box7.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box7.onclick = null;
+	};
+
+// changes square8 depending on the click and pushes player info to an array
+// checks win logic and changes players turn 
+	var square8 = document.getElementById("square8");
+	square8.onclick = function(){
+		if(player1 == true){
+			this.innerHTML = "x";
+			box8.push("player1");
+			player1 = 0;
+		}
+		else {
+			this.innerHTML = "o";
+			box8.push("player2");
+			player1 = 1;
+		}
+		checkWin();
+		box8.onclick = null;
+	};
+
+
+	//win logic 
+	var checkWin = function(){
+		if (box0[0] === "player1" && box1[0] === "player1" && box2[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box0[0] === "player2" && box1[0] === "player2" && box2[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box3[0] === "player1" && box4[0] === "player1" && box5[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box3[0] === "player2" && box4[0] === "player2" && box5[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box6[0] === "player1" && box7[0] === "player1" && box8[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box6[0] === "player2" && box7[0] === "player2" && box8[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box0[0] === "player1" && box3[0] === "player1" && box6[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box0[0] === "player2" && box3[0] === "player2" && box6[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box1[0] === "player1" && box4[0] === "player1" && box7[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box1[0] === "player2" && box4[0] === "player2" && box7[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box2[0] === "player1" && box5[0] === "player1" && box8[0] === "player1"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box2[0] === "player2" && box5[0] === "player2" && box8[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+
+		else if (box0[0] === "player1" && box4[0] === "player1" && box8[0] === "player1"){
+			alert("Player 1 Wins!");
+		}
+
+		else if (box0[0] === "player2" && box4[0] === "player2" && box8[0] === "player2"){
+			alert("Player 2 Wins!");
+		}
+	};
 
 	</script>
 
