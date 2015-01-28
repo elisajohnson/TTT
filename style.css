@@ -1,0 +1,64 @@
+    body {
+    	background-color: #FBFBFB;
+    }
+    .header{
+    	font-size: 75px;
+    	text-align: left;
+    	font-family: 'Helvetica', sans-serif;
+    	float: left;
+    	margin-top: 155px;
+    }
+
+ 	#board {
+ 		width: 600px;
+ 		margin: auto;
+ 		padding: none;
+ 		position: relative;
+ 		background-color: #FBFBFB;
+ 		font-size: 75px;
+    	text-align: center;
+    	font-family: 'Helvetica', sans-serif;
+ 	}
+
+ 	#square4, #square5, #square7, #square8 {
+    	border-left: 5px solid black;
+ 	 	border-top: 5px solid black;
+ 	 }
+
+ 	 #square1, #square2 {
+ 	 	border-left: 5px solid black;
+ 	 }
+
+ 	#square3, #square6 {
+ 		border-top: 5px solid black;
+ 	}
+
+ 	div > div {
+ 		display: inline-block;
+ 		width: 190px;
+ 		height: 190px;
+ 		border-width: 190px;
+ 		padding: none;
+ 		float: left;
+ 		font-family: 'Helvetica', sans-serif;
+ 		font-size: 75px;
+ 		text-align: center;
+ 		background-color: #FBFBFB;
+ 	}
+
+/* js board build out from Lorin 
+	 var board = document.getElementById("board");
+	 creates and numbers the divs
+	 for(var i=0; i < 9; ++i) {
+	 	var newDiv = document.createElement("div");
+	 	board.appendChild(newDiv);
+	 	newDiv.innerHTML = i;
+	 		if (i % 3 != 0){
+	 			newDiv.className = "rightRows";
+	 	 newDiv.addEventListener("click").style.backgroundColor="blue";
+	 		}
+	 		else {
+	 			newDiv.className = "topRow";
+	 		};
+	 			if //need to remove top border for 1,2 and bottom border for 6
+	 };*/

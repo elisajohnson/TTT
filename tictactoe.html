@@ -1,48 +1,10 @@
 <html>
 <head>
     <title></title>
-    <style>
-    .header{
-    	font-size: 75px;
-    	text-align: left;
-    	font-family: 'Helvetica', sans-serif;
-    	float: left;
-    	margin-top: 155px;
-    }
-
- 	#board {
- 		width: 600px;
- 		margin: auto;
- 		padding: none;
- 		position: relative;
- 	}
-
- 	#square4, #square5, #square7, #square8 {
-    	border-left: 5px solid black;
- 	 	border-top: 5px solid black;
- 	 }
-
- 	 #square1, #square2 {
- 	 	border-left: 5px solid black;
- 	 }
-
- 	#square3, #square6 {
- 		border-top: 5px solid black;
- 	}
-
- 	div > div {
- 		display: inline-block;
- 		width: 190px;
- 		height: 190px;
- 		border-width: 190px;
- 		padding: none;
- 		float: left;
- 	}
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="header">T <br> T <br> T</h1>
+<h1 class="header">Tic <br> Tac <br> Toe</h1>
 
 	<div id="board">
 	<!-- squares for the board -->
@@ -76,222 +38,261 @@
 // checks win logic and changes players turn 
 	var square0 = document.getElementById("square0");
 	square0.onclick = function(){
+		if(box0[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box0.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box0[0] = "player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box0.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box0[0] = "player2";
 			player1 = 1;
 		}
 		checkWin();
-		// box0.onclick = null;
 	};
 
 // changes square1 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square1 = document.getElementById("square1");
 	square1.onclick = function(){
+		if(box1[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box1.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box1[0]="player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box1.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box1[0] = "player2";
 			player1 = 1;
 		}
 		checkWin();
-		box1.onclick = null;
 	};
 
 // changes square2 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square2 = document.getElementById("square2");
 	square2.onclick = function(){
+		if(box2[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box2.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box2[0]="player1"
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box2.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box2[0] = "player2";
 			player1 = 1;
 		}
 		checkWin();
-		box2.onclick = null;
 	};		
 
 // changes square3 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square3 = document.getElementById("square3");
 	square3.onclick = function(){
+		if(box3[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box3.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box3[0]="player1"
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box3.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box3[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box3.onclick = null;
 	};
 
 // changes square4 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square4 = document.getElementById("square4");
 	square4.onclick = function(){
+		if(box4[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box4.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box4[0]="player1"
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box4.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box4[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box4.onclick = null;
 	};
 
 // changes square5 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square5 = document.getElementById("square5");
 	square5.onclick = function(){
+		if(box5[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box5.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box5[0]="player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box5.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box5[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box5.onclick = null;
 	};
 
 // changes square6 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square6 = document.getElementById("square6");
 	square6.onclick = function(){
+		if(box6[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box6.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box6[0]="player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box6.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box6[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box6.onclick = null;
 	};
 
 // changes square7 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square7 = document.getElementById("square7");
 	square7.onclick = function(){
+		if(box7[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box7.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box7[0]="player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box7.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box7[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box7.onclick = null;
 	};
 
 // changes square8 depending on the click and pushes player info to an array
 // checks win logic and changes players turn 
 	var square8 = document.getElementById("square8");
 	square8.onclick = function(){
+		if(box8[0] != undefined){
+			return;
+		}
 		if(player1 == true){
-			this.innerHTML = "x";
-			box8.push("player1");
+			this.innerHTML = "<img src='beetle.png' align='middle' width='125px' height='125px'>";
+			box8[0]="player1";
 			player1 = 0;
 		}
 		else {
-			this.innerHTML = "o";
-			box8.push("player2");
+			this.innerHTML = "<img src='bee.png' align='middle' width='125px' height='125px'>";
+			box8[0]="player2";
 			player1 = 1;
 		}
 		checkWin();
-		box8.onclick = null;
 	};
 
 
 	//win logic 
 	var checkWin = function(){
 		if (box0[0] === "player1" && box1[0] === "player1" && box2[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box0[0] === "player2" && box1[0] === "player2" && box2[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box3[0] === "player1" && box4[0] === "player1" && box5[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box3[0] === "player2" && box4[0] === "player2" && box5[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box6[0] === "player1" && box7[0] === "player1" && box8[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box6[0] === "player2" && box7[0] === "player2" && box8[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box0[0] === "player1" && box3[0] === "player1" && box6[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box0[0] === "player2" && box3[0] === "player2" && box6[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box1[0] === "player1" && box4[0] === "player1" && box7[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box1[0] === "player2" && box4[0] === "player2" && box7[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box2[0] === "player1" && box5[0] === "player1" && box8[0] === "player1"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box2[0] === "player2" && box5[0] === "player2" && box8[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box0[0] === "player1" && box4[0] === "player1" && box8[0] === "player1"){
-			alert("Player 1 Wins!");
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
 		}
 
 		else if (box0[0] === "player2" && box4[0] === "player2" && box8[0] === "player2"){
-			alert("Player 2 Wins!");
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
 		}
+
+		else if (box0[0] === "player1" && box4[0] === "player1" && box8[0] === "player1"){
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
+		}
+
+		else if (box0[0] === "player2" && box4[0] === "player2" && box8[0] === "player2"){
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
+		}
+
+		else if (box2[0] === "player1" && box4[0] === "player1" && box6[0] === "player1"){
+			document.getElementById("board").innerHTML = "Beetle Wins!<br><img src='beetle.png' align='middle' width='500px' height='500px'>";
+		}
+
+		else if (box2[0] === "player2" && box4[0] === "player2" && box6[0] === "player2"){
+			document.getElementById("board").innerHTML = "Bee Wins!<br><img src='bee.png' align='middle' width='500px' height='500px'>";
+		}
+
+		else if (box0[0] != undefined && box1[0] != undefined && box2[0] != undefined && box3[0] != undefined && box4[0] != undefined && box5[0] != undefined && box6[0] != undefined && box7[0] != undefined && box8[0] != undefined){
+			document.getElementById("board").innerHTML = "Cat's Game";
+		}
+		
 	};
 
 	</script>
