@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="ticTacApp">
+<head>
+	<title></title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Angular -->
+	<script src="angular.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
+ 	<!-- AngularFire -->
+ 	 <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
+  	<!-- Javascript -->
+  	<script src="app.js"></script>
+</head>
+
+<body ng-controller="ticTacCtrl">
+<!-- TTT board build out -->
+	<div id="board">
+		<div class="square"
+		ng-repeat="square in board track by $index"
+		ng-click="onClick($index)"
+		ng-bind="board[$index].marker">
+		{{ square }}
+		</div>
+	</div>	
+	
+
+</body>
+</html>
+
+
