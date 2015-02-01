@@ -10,6 +10,7 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
 	var counterRef = new Firebase ("https://tic-tac-toe-ej.firebaseio.com/counter");
 	var counterSync = $firebase(counterRef);
 	$scope.counter = counterSync.$asArray();
+
 	
 	// props to Brooke 
 	// this function will add the counter to firebase and reset the board
@@ -24,17 +25,17 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
 
 
 	// builds out the board when it is loaded 
-    $scope.board.$loaded(function () {
+    $scope.board.$loaded(function buildBoard() {
         if ($scope.board.length === 0) {
         	var player1 = 'X';
             for (var i = 0; i < 9; i++) {
                 $scope.board.$add({marker: ''});
             }
-		} else {
-   			for (var i=0; i<9; i++)
-   			$scope.board[i] = '';
-   			$scope.board.$save(i);
-		}
+        		} else {
+           			for (var i=0; i<9; i++)
+           			$scope.board[i] = '';
+           			$scope.board.$save(i);
+        		}
    	});
 
     // ng-click and ng-bind are linked to this function 
@@ -46,7 +47,7 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
    				$scope.board.$save($scope.board[index]);
    			}
    			else {
-   				$scope.board[index].marker = "O";
+   				$scope.board[index].marker = "f";
    				// saved the marker in firebase
    				$scope.board.$save($scope.board[index]);
    			};
@@ -54,81 +55,118 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
    			checkWin();
    		}
 
-   	}
+   	} 
 
+
+    // Win logic
    	var checkWin = function(){
    		if ($scope.board[0].marker=="X" && $scope.board[1].marker=="X" && $scope.board[2].marker=="X"){
-   			alert("X Wins!");
+   			alert("Snake Wins!");
+        // clears data from firebase after each win
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
    		}
 
-      else if ($scope.board[0].marker=="O" && $scope.board[1].marker=="O" && $scope.board[2].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[0].marker=="f" && $scope.board[1].marker=="f" && $scope.board[2].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[3].marker=="X" && $scope.board[4].marker=="X" && $scope.board[5].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[3].marker=="O" && $scope.board[4].marker=="O" && $scope.board[5].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[3].marker=="f" && $scope.board[4].marker=="f" && $scope.board[5].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[6].marker=="X" && $scope.board[7].marker=="X" && $scope.board[8].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[6].marker=="O" && $scope.board[7].marker=="O" && $scope.board[8].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[6].marker=="f" && $scope.board[7].marker=="f" && $scope.board[8].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[0].marker=="X" && $scope.board[3].marker=="X" && $scope.board[6].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[0].marker=="O" && $scope.board[3].marker=="O" && $scope.board[6].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[0].marker=="f" && $scope.board[3].marker=="f" && $scope.board[6].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[1].marker=="X" && $scope.board[4].marker=="X" && $scope.board[7].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[1].marker=="O" && $scope.board[4].marker=="O" && $scope.board[7].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[1].marker=="f" && $scope.board[4].marker=="f" && $scope.board[7].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[2].marker=="X" && $scope.board[5].marker=="X" && $scope.board[8].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[2].marker=="O" && $scope.board[5].marker=="O" && $scope.board[8].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[2].marker=="f" && $scope.board[5].marker=="f" && $scope.board[8].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[0].marker=="X" && $scope.board[4].marker=="X" && $scope.board[8].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[0].marker=="O" && $scope.board[4].marker=="O" && $scope.board[8].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[0].marker=="f" && $scope.board[4].marker=="f" && $scope.board[8].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[2].marker=="X" && $scope.board[4].marker=="X" && $scope.board[6].marker=="X"){
-        alert("X Wins!");
+        alert("Snake Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
-      else if ($scope.board[2].marker=="O" && $scope.board[4].marker=="O" && $scope.board[6].marker=="O"){
-        alert("O Wins!");
+      else if ($scope.board[2].marker=="f" && $scope.board[4].marker=="f" && $scope.board[6].marker=="f"){
+        alert("Unicorn Wins!");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
 
       else if ($scope.board[0].marker!='' && $scope.board[1].marker!='' && $scope.board[2].marker!='' && $scope.board[3].marker!='' && $scope.board[4].marker!='' && $scope.board[5].marker!='' && $scope.board[6].marker!='' && $scope.board[7].marker!='' && $scope.board[8].marker!=''){
         alert("Cat's Game");
+        ref.remove(checkWin);
+        counterRef.remove(checkWin);
       }
    	}
 
-
-
-
+      $scope.reset = function(){
+      location.reload();
+      };
 
    	});
 

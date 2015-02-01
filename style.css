@@ -7,8 +7,8 @@
 
 h1 {
 	font-family: 'Helvetica', sans-serif;
- 	font-size: 95px;
- 	text-align: center;
+	font-size: 80px;
+	text-align: center;
 }
 
 #square-4, #square-5, #square-7, #square-8 {
@@ -24,6 +24,11 @@ h1 {
  	border-top: 5px solid black;
  }
 
+ @font-face {
+  font-family: 'animal';
+  src: url('monsterocity.ttf');
+}
+
 div > div {
  	display: inline-block;
  	width: 190px;
@@ -32,8 +37,8 @@ div > div {
  	float: left;
 /* 	border-width: 190px;*/
  	/*padding: none;*/
- 	font-family: 'Helvetica', sans-serif;
- 	font-size: 75px;
+ 	font-family: 'animal';
+ 	font-size: 90px;
  	text-align: center;
- 	background-color: #FBFBFB;
+ 	background-color: white;
  }	

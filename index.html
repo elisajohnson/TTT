@@ -2,6 +2,8 @@
 <html ng-app="ticTacApp">
 <head>
 	<title></title>
+	<!-- Animated CSS -->
+	<link rel="stylesheet" href="animations.css">
 	<!-- CSS -->
 	<link rel="stylesheet" href="style.css">
 	<!-- Angular -->
@@ -11,11 +13,13 @@
  	<!-- AngularFire -->
  	 <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
   	<!-- Javascript -->
-  	<script src="app.js"></script>
+  	<script src="app.js" ng-init="player={p1: "S", p2: "q"}"></script>
 </head>
 
 <body ng-controller="ticTacCtrl">
-<h1>TIC TAC TOE</h1>
+<h1 class="pulse">Tic Tac Toe</h1>
+<br>
+<br>
 <!-- TTT board build out -->
 	<div id="board">
 		<div id="square-{{$index}}"
