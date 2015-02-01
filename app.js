@@ -26,7 +26,7 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
 	// builds out the board when it is loaded 
     $scope.board.$loaded(function () {
         if ($scope.board.length === 0) {
-        	var player1 = 'x';
+        	var player1 = 'X';
             for (var i = 0; i < 9; i++) {
                 $scope.board.$add({marker: ''});
             }
@@ -41,12 +41,12 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
    	$scope.onClick = function (index){
    		if ($scope.board[index].marker == ""){
    			if ($scope.counter[0].turnCounter % 2 == 0) {
-   				$scope.board[index].marker = "0";
+   				$scope.board[index].marker = "X";
    				// saves the marker in firebase
    				$scope.board.$save($scope.board[index]);
    			}
    			else {
-   				$scope.board[index].marker = "X";
+   				$scope.board[index].marker = "O";
    				// saved the marker in firebase
    				$scope.board.$save($scope.board[index]);
    			};
@@ -60,23 +60,71 @@ ticTacApp.controller('ticTacCtrl', function($scope, $firebase){
    		if ($scope.board[0].marker=="X" && $scope.board[1].marker=="X" && $scope.board[2].marker=="X"){
    			alert("X Wins!");
    		}
+
+      else if ($scope.board[0].marker=="O" && $scope.board[1].marker=="O" && $scope.board[2].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[3].marker=="X" && $scope.board[4].marker=="X" && $scope.board[5].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[3].marker=="O" && $scope.board[4].marker=="O" && $scope.board[5].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[6].marker=="X" && $scope.board[7].marker=="X" && $scope.board[8].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[6].marker=="O" && $scope.board[7].marker=="O" && $scope.board[8].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[0].marker=="X" && $scope.board[3].marker=="X" && $scope.board[6].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[0].marker=="O" && $scope.board[3].marker=="O" && $scope.board[6].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[1].marker=="X" && $scope.board[4].marker=="X" && $scope.board[7].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[1].marker=="O" && $scope.board[4].marker=="O" && $scope.board[7].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[2].marker=="X" && $scope.board[5].marker=="X" && $scope.board[8].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[2].marker=="O" && $scope.board[5].marker=="O" && $scope.board[8].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[0].marker=="X" && $scope.board[4].marker=="X" && $scope.board[8].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[0].marker=="O" && $scope.board[4].marker=="O" && $scope.board[8].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[2].marker=="X" && $scope.board[4].marker=="X" && $scope.board[6].marker=="X"){
+        alert("X Wins!");
+      }
+
+      else if ($scope.board[2].marker=="O" && $scope.board[4].marker=="O" && $scope.board[6].marker=="O"){
+        alert("O Wins!");
+      }
+
+      else if ($scope.board[0].marker!='' && $scope.board[1].marker!='' && $scope.board[2].marker!='' && $scope.board[3].marker!='' && $scope.board[4].marker!='' && $scope.board[5].marker!='' && $scope.board[6].marker!='' && $scope.board[7].marker!='' && $scope.board[8].marker!=''){
+        alert("Cat's Game");
+      }
    	}
-
-    // assigning values to each square
-    // $scope.value.$add({value: 8});
-    // $scope.value.$add({value: 1});
-    // $scope.value.$add({value: 6});
-    // $scope.value.$add({value: 3});
-    // $scope.value.$add({value: 5});
-    // $scope.value.$add({value: 7});
-    // $scope.value.$add({value: 4});
-    // $scope.value.$add({value: 9});
-    // $scope.value.$add({value: 2});
-
-	// setting up firebase for my values
-	// var valuesRef = new Firebase ("https://tic-tac-toe-ej.firebaseio.com/values");
- 	//    var valueSync = $firebase(valuesRef);
- 	//    $scope.values = sync.$asArray();
 
 
 
