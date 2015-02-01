@@ -15,9 +15,11 @@
 </head>
 
 <body ng-controller="ticTacCtrl">
+<h1>TIC TAC TOE</h1>
 <!-- TTT board build out -->
 	<div id="board">
-		<div class="square"
+		<div id="square-{{$index}}"
+		class="square"
 		ng-repeat="square in board track by $index"
 		ng-click="onClick($index)"
 		ng-bind="board[$index].marker">

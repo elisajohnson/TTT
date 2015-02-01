@@ -5,11 +5,30 @@
 	position: relative;
 }
 
+h1 {
+	font-family: 'Helvetica', sans-serif;
+ 	font-size: 95px;
+ 	text-align: center;
+}
+
+#square-4, #square-5, #square-7, #square-8 {
+   	border-left: 5px solid black;
+ 	border-top: 5px solid black;
+}
+
+#square-1, #square-2 {
+	border-left: 5px solid black;
+}
+
+#square-3, #square-6 {
+ 	border-top: 5px solid black;
+ }
+
 div > div {
  	display: inline-block;
  	width: 190px;
  	height: 190px;
- 	border: 5px solid black;
+/* 	border: 5px solid black;*/
  	float: left;
 /* 	border-width: 190px;*/
  	/*padding: none;*/
